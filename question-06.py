@@ -1,10 +1,8 @@
-i= int(input('enter cost:'))
-if 1000000<i:
-     i=i-(i*0.15)
-     print('cost is:',i)
-if 500000<i<1000000:
-       i=i-(i*0.1)
-       print('cost is:',i)
-if i<500000:
-            i=i
-            print('main cost is:',i)
+j=0
+sum_l=0
+for i in range(1,11):  
+   s=int(input('عدد را وارد کنید'))
+   sum_l=s+sum_l
+   j=j+1
+#print(sum_l,j)
+print('average is:', sum_l/j)

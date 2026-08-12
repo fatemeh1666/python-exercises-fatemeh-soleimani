@@ -1,6 +1,11 @@
-i= int(input('enter distance(k/m):'))
-if i<2:
-    cost=20
-else:
-    cost=(i-2)*5+20
-    print('cost is:',cost)
+s=int(input('عدد اول را وارد گنید'))
+t=int(input('عدد دوم را وارد کنید'))
+x=input('عملگر را وارد کنید')
+if x=='*':
+    print(s*t)
+if x=='+':
+        print(s+t)
+if x=='-':
+            print(s-t)
+if x=='/':
+                print(s/t)

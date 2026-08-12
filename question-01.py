@@ -1,6 +1,6 @@
-i= input('enter name and code melli:')
-j=i[:-11:-1]
-
-print('code_melli is:',j[:-11:-1])
-#print('code_melli is:',i[0:-11:-1])
-#print(type(code_melli))
+l=[15,50,70,1,90,20,4,108,6]
+s=l[0]
+for i in  range (len(l)) :
+    if l[i]>=s:
+       s =l[i]
+print(s,':maximum')
