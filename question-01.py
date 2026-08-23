@@ -1,6 +1,13 @@
-l=[15,50,70,1,90,20,4,108,6]
-s=l[0]
-for i in  range (len(l)) :
-    if l[i]>=s:
-       s =l[i]
-print(s,':maximum')
+import random
+h=random.randint(1,10)
+print(h)
+while True:
+   # print('enter number')
+    g=int(input( 'enter number:'))
+    if g>h:
+        print('enter  smaller number:')
+    if g<h:
+        print('enter bigger number:')
+    if g==h:
+        print('tabrik')
+        break
