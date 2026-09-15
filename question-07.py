@@ -1,9 +1,28 @@
-s1=input('رنگ اول را وارد گنید')
-s2=input('رنگ دوم را وارد کنید')
-s3=input('رنگ سوم را وارد کنید')
-if (s1==s2 and s1!=s3 and s2!=s3) or (s1==s3 and s1!=s2 and s3!=s2) or (s2==s3 and s2!=s1 and s3!=s1):
-    print('دو رنگ برابرند')
-if s1==s2==s3:
-        print(' هر سه رنگ برابرند')
-if s1!=s2 and s1!=s3 and s2!=s3:
-        print(' رنگ ها برابر نیستند')
+word=input('enter str:')
+old_w=''
+count=0
+all_count=[]
+all_character=[]
+for i in range(0,len(word)):
+    
+    if old_w==word[i]:
+        count+=1
+        if i==len(word)-1:
+            all_count.append(count+1)
+            all_character.append(old_w)
+    else:
+        all_count.append(count+1)# 2 bar tekrar+1 boode
+        all_character.append(old_w)
+        count=0
+    old_w=word[i]
+#print(w)
+#print(count)
+#print(all_count)
+#print(all_character)
+new_list=[]
+for i in range(1, len(all_count)):
+    new=all_character[i]+str(all_count[i])
+    new_list.append(new)
+#print(new_list)
+final=''.join(new_list)
+print(final)
