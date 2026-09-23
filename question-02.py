@@ -1,31 +1,21 @@
-import random
-t=['sang','kaghaz','gheychi']
-while True:   
-    h=random.choice(['sang','kaghaz','gheychi'])
-    print(' random of computer is:',h)
-    g=input('یکی از گزینه ها را وارد کن:')
-    if h=='sang' and g=='kaghaz':
-       print('computer is win')
-    if h=='sang' and g=='gheychi':
-       print('computer is win')
-       
-    if h=='kaghaz' and g=='gheychi':
-       print('human is win')
-    if h=='kaghaz' and g=='sang':
-          print('human is win')
-          
-    if h=='gheychi' and g=='sang':
-          print('human is win')
-    if h=='gheychi' and g=='kaghaz':
-          print('computer is win')
-          
-    
-    if( h=='kaghaz' and g=='kaghaz') or (h=='gheychi' and g=='gheychi') or (h=='sang' and g=='sang') :
-        continue
-   
-    #if g!= 'sang' or 'gheychi' or ' kaghaz':
-   #             print('مقدار صحیح وارد کنید')
-    if g not in t:
-       print('مقدار صحیح وارد کنید')
-    if g=='exit':
-            break
+inventory={"apple":20, "banana":5, "orange":0, "milk":12, "bread":0}
+l_val=[]
+l_key=[]
+l_avai=[]
+l_out=[]
+s=0
+for i in inventory.values():
+   # if i>0:
+        l_val.append(i)
+for j in inventory.keys():
+       l_key.append(j)
+#print(l_val,l_key)
+for k in range(len(l_val)):
+    if l_val[k]>0:
+       l_avai.append(l_key[k]) 
+    if l_val[k]==0:
+        l_out.append(l_key[k])
+print("Available:",l_avai)
+print("AvaOut of stock:",l_out)
+print("tedad mahsoolat mojod:",len(l_avai))
+print("tedad mahsoolat Na_mojod:",len(l_out))
