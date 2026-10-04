@@ -1,31 +1,21 @@
-import random
-t=['sang','kaghaz','gheychi']
-while True:   
-    h=random.choice(['sang','kaghaz','gheychi'])
-    print(' random of computer is:',h)
-    g=input('یکی از گزینه ها را وارد کن:')
-    if h=='sang' and g=='kaghaz':
-       print('computer is win')
-    if h=='sang' and g=='gheychi':
-       print('computer is win')
-       
-    if h=='kaghaz' and g=='gheychi':
-       print('human is win')
-    if h=='kaghaz' and g=='sang':
-          print('human is win')
-          
-    if h=='gheychi' and g=='sang':
-          print('human is win')
-    if h=='gheychi' and g=='kaghaz':
-          print('computer is win')
-          
+def proccess_order(customer,*products,**options):
+    products_list=list(products)
+    price=100
+    discount=options.get("discount",0)#اگر تخفیف نبود 0 درنظر بگیرد
+    tax=options.get('tax',0)##اگر مالیات نبود 0 درنظر بگیرد
+    shipping=options.get('shipping',0)#اگر هزینه ارسال نبود0درنظر بگیرد
+    #for i in range(len(products_list)):
+    base_total=len(products_list)*price
+    after_discount=base_total-(base_total*(discount/100))
+    after_tax=after_discount+ (after_discount*(tax/100))
+    final_price=after_tax+shipping
     
-    if( h=='kaghaz' and g=='kaghaz') or (h=='gheychi' and g=='gheychi') or (h=='sang' and g=='sang') :
-        continue
-   
-    #if g!= 'sang' or 'gheychi' or ' kaghaz':
-   #             print('مقدار صحیح وارد کنید')
-    if g not in t:
-       print('مقدار صحیح وارد کنید')
-    if g=='exit':
-            break
+    d={"customer":customer,
+      "products":products_list,
+      "discount":discount,
+      "tax":tax,
+      "shipping":shipping,
+      "final_price":final_price}    
+    
+    return d
+print(proccess_order('ali','keyboard','laptop','mouse',discount=10,tax=9,shipping=200000))
